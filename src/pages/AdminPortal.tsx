@@ -16,6 +16,9 @@ interface ContactSubmission {
   message: string;
   status: string;
   created_at: string;
+  selected_package: string | null;
+  selected_addons: string[] | null;
+  estimated_total: number | null;
 }
 
 interface Project {
@@ -280,6 +283,23 @@ const AdminPortal = () => {
                         <p className="text-sm text-muted-foreground mb-2">
                           Company: {contact.company}
                         </p>
+                      )}
+                      {contact.selected_package && (
+                        <div className="mb-3 p-3 rounded-lg bg-primary/5 border border-primary/20">
+                          <p className="text-sm font-semibold text-primary mb-1">
+                            Package: {contact.selected_package}
+                          </p>
+                          {contact.selected_addons && contact.selected_addons.length > 0 && (
+                            <div className="text-xs text-muted-foreground mb-1">
+                              Add-ons: {contact.selected_addons.join(', ')}
+                            </div>
+                          )}
+                          {contact.estimated_total && (
+                            <p className="text-sm font-bold gradient-text">
+                              Est. Total: ${contact.estimated_total.toLocaleString()}
+                            </p>
+                          )}
+                        </div>
                       )}
                       <p className="text-sm">{contact.message}</p>
                     </div>

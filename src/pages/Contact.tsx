@@ -65,15 +65,24 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
+      const submissionData: any = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone || null,
+        company: data.company || null,
+        message: data.message,
+      };
+
+      // Add pricing selection data if available
+      if (pricingSelection) {
+        submissionData.selected_package = 'Professional Website';
+        submissionData.selected_addons = pricingSelection.addons;
+        submissionData.estimated_total = pricingSelection.total;
+      }
+
       const { error } = await supabase
         .from("contact_submissions")
-        .insert([{
-          name: data.name,
-          email: data.email,
-          phone: data.phone || null,
-          company: data.company || null,
-          message: data.message,
-        }]);
+        .insert([submissionData]);
 
       if (error) throw error;
 
@@ -83,6 +92,9 @@ const Contact = () => {
       });
 
       form.reset();
+      // Clear pricing selection from session storage
+      sessionStorage.removeItem('pricing_selection');
+      setPricingSelection(null);
     } catch (error) {
       console.error("Error submitting contact form:", error);
       toast({
