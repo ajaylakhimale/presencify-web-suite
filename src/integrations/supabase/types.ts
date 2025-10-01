@@ -19,30 +19,39 @@ export type Database = {
           company: string | null
           created_at: string | null
           email: string
+          estimated_total: number | null
           id: string
           message: string
           name: string
           phone: string | null
+          selected_addons: string[] | null
+          selected_package: string | null
           status: string | null
         }
         Insert: {
           company?: string | null
           created_at?: string | null
           email: string
+          estimated_total?: number | null
           id?: string
           message: string
           name: string
           phone?: string | null
+          selected_addons?: string[] | null
+          selected_package?: string | null
           status?: string | null
         }
         Update: {
           company?: string | null
           created_at?: string | null
           email?: string
+          estimated_total?: number | null
           id?: string
           message?: string
           name?: string
           phone?: string | null
+          selected_addons?: string[] | null
+          selected_package?: string | null
           status?: string | null
         }
         Relationships: []
