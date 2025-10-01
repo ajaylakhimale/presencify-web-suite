@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -31,6 +31,7 @@ type ContactFormValues = z.infer<typeof contactSchema>;
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [pricingSelection, setPricingSelection] = useState<any>(null);
   const { toast } = useToast();
 
   const form = useForm<ContactFormValues>({
@@ -43,6 +44,22 @@ const Contact = () => {
       message: "",
     },
   });
+
+  useEffect(() => {
+    // Check if user came from pricing page with selections
+    const savedSelection = sessionStorage.getItem('pricing_selection');
+    if (savedSelection) {
+      const selection = JSON.parse(savedSelection);
+      setPricingSelection(selection);
+      
+      // Pre-fill message with selected items
+      const addonsList = selection.addons.length > 0 
+        ? `\n\nSelected Add-ons:\n${selection.addons.map((a: string) => `- ${a}`).join('\n')}\n\nEstimated Total: $${selection.total.toLocaleString()}`
+        : '';
+      
+      form.setValue('message', `I'm interested in the Professional Website package.${addonsList}\n\nAdditional details: `);
+    }
+  }, [form]);
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
@@ -114,7 +131,10 @@ const Contact = () => {
               Let's Build Something Amazing
             </h1>
             <p className="text-xl text-muted-foreground">
-              Have a project in mind? We'd love to hear about it. Fill out the form below and we'll get back to you shortly.
+              {pricingSelection 
+                ? `You've selected: Professional Website${pricingSelection.addons.length > 0 ? ` + ${pricingSelection.addons.length} add-on${pricingSelection.addons.length > 1 ? 's' : ''}` : ''}`
+                : "Have a project in mind? We'd love to hear about it. Fill out the form below and we'll get back to you shortly."
+              }
             </p>
           </div>
 
@@ -151,11 +171,38 @@ const Contact = () => {
 
               <Card className="gradient-card shadow-glow">
                 <CardContent className="p-6 space-y-4">
-                  <Sparkles className="w-8 h-8 text-primary" />
-                  <h3 className="text-xl font-bold">Quick Response</h3>
-                  <p className="text-sm text-muted-foreground">
-                    We typically respond to all inquiries within 24 hours during business days.
-                  </p>
+                  {pricingSelection ? (
+                    <>
+                      <Sparkles className="w-8 h-8 text-primary" />
+                      <h3 className="text-xl font-bold">Your Selection</h3>
+                      <div className="space-y-2 text-sm">
+                        <p className="font-semibold">Base Package: ${pricingSelection.basePrice.toLocaleString()}</p>
+                        {pricingSelection.addons.length > 0 && (
+                          <div>
+                            <p className="font-semibold mb-1">Add-ons:</p>
+                            <ul className="space-y-1 text-muted-foreground">
+                              {pricingSelection.addons.map((addon: string, idx: number) => (
+                                <li key={idx}>• {addon}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                        <div className="pt-2 border-t border-border">
+                          <p className="font-bold text-lg gradient-text">
+                            Estimated Total: ${pricingSelection.total.toLocaleString()}
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="w-8 h-8 text-primary" />
+                      <h3 className="text-xl font-bold">Quick Response</h3>
+                      <p className="text-sm text-muted-foreground">
+                        We typically respond to all inquiries within 24 hours during business days.
+                      </p>
+                    </>
+                  )}
                 </CardContent>
               </Card>
             </div>
