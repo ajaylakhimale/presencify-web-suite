@@ -4,15 +4,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import { 
   Sparkles, 
-  Code, 
-  Rocket, 
-  Shield, 
-  Zap, 
-  CheckCircle2,
   ArrowRight,
   Globe,
   Smartphone,
-  Palette
+  Palette,
+  Zap,
+  Shield,
+  Headphones,
+  CheckCircle2,
+  Code2,
+  TrendingUp,
+  Clock
 } from "lucide-react";
 
 const Landing = () => {
@@ -20,119 +22,162 @@ const Landing = () => {
     {
       icon: Globe,
       title: "Professional Websites",
-      description: "Stunning, responsive websites that perfectly represent your brand and engage your audience.",
-    },
-    {
-      icon: Code,
-      title: "Web Applications",
-      description: "Custom web apps built with cutting-edge technology for optimal performance and user experience.",
+      description: "Beautiful, high-converting websites that make lasting impressions on your audience.",
+      features: ["Responsive Design", "SEO Optimized", "Fast Loading"],
     },
     {
       icon: Smartphone,
-      title: "Online Software Tools",
-      description: "B2B tools and SaaS solutions designed to streamline your business operations.",
+      title: "Web Applications",
+      description: "Custom web apps that streamline operations and drive business growth.",
+      features: ["Cloud-Based", "Scalable", "Secure"],
     },
     {
-      icon: Palette,
-      title: "Website Redesign",
-      description: "Modernize your existing website with fresh design and enhanced functionality.",
+      icon: Code2,
+      title: "B2B Software Tools",
+      description: "Powerful business tools designed to automate and enhance productivity.",
+      features: ["API Integration", "Custom Features", "24/7 Uptime"],
     },
   ];
 
-  const features = [
-    "Lightning-fast performance",
-    "Mobile-first responsive design",
-    "SEO optimized",
-    "Secure & scalable architecture",
-    "Ongoing support & maintenance",
-    "Custom feature development",
+  const process = [
+    {
+      step: "01",
+      title: "Discovery Call",
+      description: "We learn about your business, goals, and vision to create the perfect solution.",
+    },
+    {
+      step: "02",
+      title: "Design & Planning",
+      description: "Our team crafts a custom design and development roadmap tailored to your needs.",
+    },
+    {
+      step: "03",
+      title: "Development",
+      description: "We build your project with cutting-edge technology and best practices.",
+    },
+    {
+      step: "04",
+      title: "Launch & Support",
+      description: "Go live with confidence, backed by our ongoing support and maintenance.",
+    },
   ];
 
-  const stats = [
-    { value: "500+", label: "Projects Delivered" },
-    { value: "98%", label: "Client Satisfaction" },
-    { value: "50+", label: "Team Members" },
-    { value: "24/7", label: "Support Available" },
+  const testimonials = [
+    {
+      quote: "Presencify transformed our online presence. The team delivered beyond expectations!",
+      author: "Sarah Johnson",
+      role: "CEO, TechStart Inc",
+    },
+    {
+      quote: "Professional, fast, and exactly what we needed. Highly recommend their services.",
+      author: "Michael Chen",
+      role: "Founder, Digital Solutions",
+    },
+    {
+      quote: "The website they built doubled our conversion rate. Best investment we made.",
+      author: "Emily Rodriguez",
+      role: "Marketing Director",
+    },
+  ];
+
+  const benefits = [
+    { icon: Zap, text: "Lightning-Fast Delivery" },
+    { icon: Shield, text: "Enterprise-Grade Security" },
+    { icon: TrendingUp, text: "Conversion Optimized" },
+    { icon: Headphones, text: "Dedicated Support Team" },
   ];
 
   return (
     <div className="min-h-screen">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+      {/* Hero Section - Enhanced */}
+      <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="absolute inset-0 gradient-hero opacity-5" />
-        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
         
         <div className="container mx-auto relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+          <div className="max-w-5xl mx-auto text-center space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Your Digital Success Partner</span>
+              <span className="text-sm font-medium text-primary">Trusted by Growing Businesses</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              Build Your Digital
-              <span className="gradient-text"> Presence</span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight tracking-tight">
+              Your Digital Success
+              <span className="block gradient-text mt-2">Starts Here</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We create professional websites, web applications, and online software tools that transform businesses and drive growth.
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              We create stunning websites and powerful web applications that turn visitors into customers. Professional, affordable, and built to scale with your business.
             </p>
             
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link to="/contact">
-                <Button variant="hero" size="xl">
-                  Start Your Project
+            <div className="flex flex-wrap gap-4 justify-center pt-4">
+              <Link to="/pricing">
+                <Button variant="hero" size="xl" className="text-lg">
+                  View Pricing & Features
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
-              <Link to="/pricing">
-                <Button variant="outline" size="xl">
-                  View Pricing
+              <Link to="/contact">
+                <Button variant="outline" size="xl" className="text-lg">
+                  Schedule Free Consultation
                 </Button>
               </Link>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold gradient-text">
-                    {stat.value}
+            {/* Trust Badges */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-4xl mx-auto">
+              {benefits.map((benefit) => {
+                const Icon = benefit.icon;
+                return (
+                  <div key={benefit.text} className="flex flex-col items-center gap-2">
+                    <div className="p-3 rounded-lg bg-primary/10">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium text-center">{benefit.text}</span>
                   </div>
-                  <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto">
+      {/* Services Section - Enhanced */}
+      <section className="py-24 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Our Services
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+              What We Build
             </h2>
             <p className="text-xl text-muted-foreground">
-              Comprehensive digital solutions tailored to your business needs
+              Comprehensive digital solutions designed to elevate your business
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <Card key={service.title} className="group hover:shadow-glow transition-all duration-300 border-primary/20">
-                  <CardContent className="p-6 space-y-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <Icon className="w-6 h-6 text-primary" />
+                <Card key={service.title} className="group hover:shadow-glow transition-all duration-300 border-primary/20 bg-background/50 backdrop-blur-sm">
+                  <CardContent className="p-8 space-y-6">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Icon className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold">{service.title}</h3>
-                    <p className="text-muted-foreground">{service.description}</p>
+                    <div>
+                      <h3 className="text-2xl font-display font-bold mb-3">{service.title}</h3>
+                      <p className="text-muted-foreground mb-4">{service.description}</p>
+                    </div>
+                    <div className="space-y-2 pt-4 border-t border-border">
+                      {service.features.map((feature) => (
+                        <div key={feature} className="flex items-center gap-2 text-sm">
+                          <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </CardContent>
                 </Card>
               );
@@ -141,86 +186,131 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-                  <Zap className="w-4 h-4 text-accent" />
-                  <span className="text-sm font-medium text-accent">Why Choose Us</span>
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold">
-                  Built for Performance & Growth
-                </h2>
-                <p className="text-xl text-muted-foreground">
-                  Every project is crafted with precision, powered by modern technology, and optimized for your success.
-                </p>
-              </div>
+      {/* Process Section - New */}
+      <section className="py-24 px-4">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+              Our Proven Process
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              From concept to launch, we guide you every step of the way
+            </p>
+          </div>
 
-              <div className="grid grid-cols-1 gap-4">
-                {features.map((feature) => (
-                  <div key={feature} className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-colors">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="font-medium">{feature}</span>
-                  </div>
-                ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {process.map((item, index) => (
+              <div key={item.step} className="relative">
+                {index < process.length - 1 && (
+                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent -translate-x-1/2" />
+                )}
+                <Card className="h-full hover:shadow-card transition-all duration-300">
+                  <CardContent className="p-6 space-y-4">
+                    <div className="text-5xl font-display font-bold gradient-text">
+                      {item.step}
+                    </div>
+                    <h3 className="text-xl font-display font-bold">{item.title}</h3>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
               </div>
-
-              <Link to="/contact">
-                <Button variant="hero" size="lg">
-                  Get Started Today
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
-            </div>
-
-            <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 shadow-glow" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center space-y-4 p-8">
-                  <Rocket className="w-24 h-24 mx-auto text-primary animate-float" />
-                  <p className="text-2xl font-bold">Ready to Launch?</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center space-y-8 p-12 rounded-2xl gradient-card shadow-glow">
-            <Shield className="w-16 h-16 mx-auto text-primary" />
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Ready to Transform Your Digital Presence?
+      {/* Testimonials Section - New */}
+      <section className="py-24 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+              What Our Clients Say
             </h2>
             <p className="text-xl text-muted-foreground">
-              Join hundreds of satisfied clients who trust Presencify with their digital success.
+              Real results from businesses like yours
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link to="/contact">
-                <Button variant="hero" size="xl">
-                  Start Your Project
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
-              <Link to="/pricing">
-                <Button variant="outline" size="xl">
-                  View Pricing Plans
-                </Button>
-              </Link>
-            </div>
           </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="hover:shadow-glow transition-all duration-300 bg-background/50 backdrop-blur-sm">
+                <CardContent className="p-8 space-y-4">
+                  <div className="text-4xl text-primary opacity-20">"</div>
+                  <p className="text-lg leading-relaxed">{testimonial.quote}</p>
+                  <div className="pt-4 border-t border-border">
+                    <p className="font-semibold">{testimonial.author}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Enhanced */}
+      <section className="py-24 px-4">
+        <div className="container mx-auto max-w-5xl">
+          <Card className="gradient-hero text-white border-0 shadow-glow overflow-hidden relative">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30" />
+            <CardContent className="p-12 md:p-16 text-center relative z-10 space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm">
+                <Clock className="w-4 h-4" />
+                <span className="text-sm font-medium">Limited Slots Available</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight">
+                Ready to Build Your Dream Website?
+              </h2>
+              
+              <p className="text-xl text-white/90 max-w-2xl mx-auto">
+                Join innovative businesses transforming their digital presence. Get started today with flexible pricing and expert support.
+              </p>
+              
+              <div className="flex flex-wrap gap-4 justify-center pt-4">
+                <Link to="/pricing">
+                  <Button variant="secondary" size="xl" className="text-lg bg-white text-primary hover:bg-white/90">
+                    View Pricing
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button variant="outline" size="xl" className="text-lg border-white text-white hover:bg-white/10">
+                    Book Free Consultation
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="pt-8 flex items-center justify-center gap-2 text-sm text-white/80">
+                <CheckCircle2 className="w-4 h-4" />
+                <span>No commitment required</span>
+                <span className="text-white/40">•</span>
+                <CheckCircle2 className="w-4 h-4" />
+                <span>Free project quote</span>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t border-border">
-        <div className="container mx-auto text-center text-muted-foreground">
-          <p>&copy; 2025 Presencify. All rights reserved.</p>
+      <footer className="py-12 px-4 border-t border-border bg-muted/30">
+        <div className="container mx-auto max-w-7xl">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <Code2 className="w-6 h-6 text-primary" />
+              <span className="text-lg font-display font-bold gradient-text">Presencify</span>
+            </div>
+            <p className="text-muted-foreground text-center">&copy; 2025 Presencify. All rights reserved.</p>
+            <div className="flex gap-6">
+              <Link to="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Pricing
+              </Link>
+              <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Contact
+              </Link>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
