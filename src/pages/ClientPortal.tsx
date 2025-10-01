@@ -109,7 +109,7 @@ const ClientPortal = () => {
                 <Code2 className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-xl font-bold gradient-hero bg-clip-text text-transparent">
+                <h1 className="text-xl font-bold gradient-text">
                   Presencify
                 </h1>
                 <p className="text-sm text-muted-foreground">Client Portal</p>
@@ -152,7 +152,7 @@ const ClientPortal = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent">
+                <div className="text-3xl font-bold gradient-text">
                   {projects.length}
                 </div>
               </CardContent>
@@ -165,7 +165,7 @@ const ClientPortal = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent">
+                <div className="text-3xl font-bold gradient-text">
                   {projects.filter(p => p.status === "in-progress").length}
                 </div>
               </CardContent>
@@ -178,7 +178,7 @@ const ClientPortal = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent">
+                <div className="text-3xl font-bold gradient-text">
                   {projects.filter(p => p.status === "completed").length}
                 </div>
               </CardContent>

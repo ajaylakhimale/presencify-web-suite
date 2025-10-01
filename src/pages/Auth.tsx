@@ -153,7 +153,7 @@ const Auth = () => {
               <Code2 className="w-8 h-8 text-primary" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold gradient-hero bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold gradient-text">
             Presencify
           </h1>
           <p className="text-muted-foreground mt-2">

@@ -25,7 +25,7 @@ const Navigation = () => {
             <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
               <Code2 className="w-6 h-6 text-primary" />
             </div>
-            <span className="text-xl font-bold gradient-hero bg-clip-text text-transparent">
+            <span className="text-xl font-bold gradient-text">
               Presencify
             </span>
           </Link>

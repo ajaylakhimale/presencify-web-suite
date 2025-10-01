@@ -96,7 +96,7 @@ const Pricing = () => {
                 <CardHeader className="text-center pb-8 pt-8">
                   <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                   <div className="mb-2">
-                    <span className="text-4xl font-bold gradient-hero bg-clip-text text-transparent">
+                    <span className="text-4xl font-bold gradient-text">
                       {plan.price}
                     </span>
                     {plan.price !== "Custom" && <span className="text-muted-foreground"> / project</span>}
@@ -141,7 +141,7 @@ const Pricing = () => {
                   <p className="text-muted-foreground mb-4">
                     Keep your website secure, updated, and running smoothly
                   </p>
-                  <p className="text-2xl font-bold gradient-hero bg-clip-text text-transparent">
+                  <p className="text-2xl font-bold gradient-text">
                     Starting at $299/month
                   </p>
                 </CardContent>
@@ -153,7 +153,7 @@ const Pricing = () => {
                   <p className="text-muted-foreground mb-4">
                     Add new features and functionality to your existing website
                   </p>
-                  <p className="text-2xl font-bold gradient-hero bg-clip-text text-transparent">
+                  <p className="text-2xl font-bold gradient-text">
                     Starting at $150/hour
                   </p>
                 </CardContent>

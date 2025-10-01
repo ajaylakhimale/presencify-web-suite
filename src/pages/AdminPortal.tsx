@@ -154,7 +154,7 @@ const AdminPortal = () => {
                 <Code2 className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-xl font-bold gradient-hero bg-clip-text text-transparent">
+                <h1 className="text-xl font-bold gradient-text">
                   Presencify
                 </h1>
                 <p className="text-sm text-muted-foreground">Admin Portal</p>
@@ -198,7 +198,7 @@ const AdminPortal = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent">
+                <div className="text-3xl font-bold gradient-text">
                   {contacts.filter(c => c.status === "new").length}
                 </div>
               </CardContent>
@@ -212,7 +212,7 @@ const AdminPortal = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent">
+                <div className="text-3xl font-bold gradient-text">
                   {projects.length}
                 </div>
               </CardContent>
@@ -226,7 +226,7 @@ const AdminPortal = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent">
+                <div className="text-3xl font-bold gradient-text">
                   {projects.filter(p => p.status === "in-progress").length}
                 </div>
               </CardContent>
@@ -240,7 +240,7 @@ const AdminPortal = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent">
+                <div className="text-3xl font-bold gradient-text">
                   {new Set(projects.map(p => p.client_id)).size}
                 </div>
               </CardContent>

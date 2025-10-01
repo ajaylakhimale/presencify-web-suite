@@ -74,7 +74,7 @@ const Landing = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               Build Your Digital
-              <span className="gradient-hero bg-clip-text text-transparent"> Presence</span>
+              <span className="gradient-text"> Presence</span>
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -99,7 +99,7 @@ const Landing = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold gradient-hero bg-clip-text text-transparent">
+                  <div className="text-3xl md:text-4xl font-bold gradient-text">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
